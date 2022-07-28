@@ -8,9 +8,29 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State var isTextShowing = true
     var body: some View {
-        Text("Hello, world!")
+        VStack {
+            if isTextShowing {
+                Text("Hello, world !!!!")
+                    .padding()
+                    .background(.bar)
+                    .foregroundColor(.red)
+                    .font(.title2)
+            } else {
+                Text("")
+                    .padding()
+            }
+            Button("Click me") {
+                isTextShowing.toggle()
+            }
             .padding()
+            .font(.title2)
+            .foregroundColor(.black)
+            .background(.green)
+            .cornerRadius(15)
+            
+        }
     }
 }
 
